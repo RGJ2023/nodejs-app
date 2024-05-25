@@ -3,7 +3,7 @@ pipeline{
 
     stages{
         stage('Dep Install'){
-            agent {docker {image 'node:14'}}
+            agent {docker {image 'nodejs'}}
             steps{
                 sh 'cat /etc/os-release'
                 sh 'exit'
@@ -11,7 +11,6 @@ pipeline{
                 sh 'apt install sudo -y'
                 sh 'sudo chown -R 995:993 "/.npm"'
                 sh 'npm install'
-                sh 'npm pack'
             }
         }
     }

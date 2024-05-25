@@ -16,9 +16,7 @@ pipeline{
             }
         }
         stage('upload artifact'){
-        sh 'curl -u<USERNAME>:<PASSWORD> -T /
-        *.tgz "http://52.91.131.238:8081/artifactory/utc-nodejs-app/utc-app-${BUILD_ID}.tgz
-        "  '
+        sh 'curl -uadmin:APB29Dhy6UpUNdnyKWtfmHidLbN -T *.tgz "http://52.91.131.238:8081/artifactory/utc-nodejs-app/utc-app-${BUILD_ID}.tgz"'
         }
     }
 }
